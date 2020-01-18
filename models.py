@@ -8,9 +8,7 @@ class Dojo(models.Model):
     desc = models.TextField("old dojo")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    # def __repr__(self):
-    #     return f"<Dojo object: {self.name} {self.state} {self.stack} {self.amount_cost}>"
-
+    
 class Ninja(models.Model):
     first_name = models.CharField(max_length=150)
     last_name = models.CharField(max_length=150)
@@ -18,6 +16,4 @@ class Ninja(models.Model):
     dojo = models.ForeignKey(Dojo, related_name='ninjas', on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    # def __repr__(self):
-    #     return f"<Dojo object: {self.first_name} {self.last_name} {self.any_experience} {self.dojo}>"
-
+    
